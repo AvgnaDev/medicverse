@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&family=Raleway:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+   /* Max width */
+   --maxWidth: 1160px;
+   /* Font */
+   --fonts-body: "Poppins", sans-serif;
+   --fonts-title: "Raleway", sans-serif;
+   /* --headerBannerBody:#12b48c5c; */
+   --headerBannerBody:rgba(51, 185, 96, 0.5);
+   /* Header Color */
+   /* --headerColor:#12b48b4d; */
+   --headerColor:#33b960
+}
+ /* Scrollbar */
+ ::-webkit-scrollbar {
+  width: 8px;
+  background-color: #12b48c5c;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #12b48c5c;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #12b48cd7;
+}
+body {
+  /* background: linear-gradient(135deg, rgba(198, 234, 227, 0.1) 55%, rgba(65, 147, 169, 0.1) 70%); */
+  /* background-image: linear-gradient(135deg, rgba(51, 185, 96, 1) 50%, rgba(51, 185, 96, 1) 70%); */
+  background:var(--headerBannerBody);
+  width: 100%;
+  height: 100vh;
+  font-family: var(--fonts-body)
+}
+.headerBgColor{
+  background-color:var(--headerColor)
+}
+.wholeBodyColor{
+  background-color: var(--headerBannerBody);
+}
+.font-title{
+  font-family: var(--fonts-title)
+}
+img{
+  width: 100%;
+  max-width: 100%
+}
+h1{
+  @apply text-6xl
+}
+h2{
+  @apply text-5xl
+}
+h3{
+  @apply text-4xl
+}
+h4{
+  @apply text-3xl
+}
+h5{
+  @apply text-2xl
+}
+h6{
+  @apply text-xl
+} 
+.para{
+  @apply text-sm
+}
+/* .fullWidth{
+  width: var(--maxWidth);
+  margin: 0 auto
+} */
+
+@layer components {
+  .flex-around {
+    @apply flex justify-around items-start flex-wrap
+  }
+  .flex-between {
+    @apply flex justify-between items-center flex-wrap
+  }
+  .flex-center {
+    @apply flex justify-center items-center flex-wrap
+  }
+  .flex-end {
+    @apply flex justify-end items-end flex-wrap
+  }
+  .flex-start {
+    @apply flex justify-start items-center flex-wrap
+  }
+  .button {
+    @apply px-2.5 py-1.5 tracking-wide rounded outline-none border-none;
+  }
+  .button--action {
+    @apply bg-gradient-to-r from-customGreen-800 to-sky-500 text-white hover:to-customGreen-900 hover:from-sky-600
+  }
+}
+@layer utilities{
+  .box::before{
+    @apply content-[''] absolute w-1/2 h-full border-l-8 border-t-8 bottom-0 left-0 border-customGreen-700
+  }
+  .box::after{
+    @apply content-[''] absolute w-[43%] h-full border-b-8 border-r-8 right-0 top-0 border-customGreen-600
+  }
+}
+input{
+  @apply py-2 z-10 px-4 border-0 focus:outline-none ring-green-400 focus:ring-2 focus:to-green-500 rounded;
+}
+textarea {
+  @apply py-2 z-10 px-4 border-0 focus:outline-none ring-green-400 focus:ring-2 focus:to-green-500 rounded;
+}
